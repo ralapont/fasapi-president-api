@@ -1,4 +1,5 @@
 import peewee
+#from .picture_model import Picture
 
 from app.v1.utils.db import db
 

@@ -5,7 +5,7 @@ from fastapi import Body
 from typing import List, Optional
 from fastapi import Path
 
-from app.v1.schema import president_schema, mensaje_schema
+from app.v1.schema import president_schema
 from app.v1.service import president_service
 
 from app.v1.utils.db import get_db
@@ -20,7 +20,7 @@ router = APIRouter(prefix="/api/v1")
     dependencies=[Depends(get_db)],
     summary="Create a new president"
 )
-def create_president(president: president_schema.PresidentBase = Body(...)):
+def create_president(president: president_schema.PresidentPicture = Body(...)):
     """
     ## Create a new president in the app
 
@@ -33,6 +33,7 @@ def create_president(president: president_schema.PresidentBase = Body(...)):
     ### Returns
     - president: president info
     """
+    print("presidente " + president.last_name + " " + president.first_name + " " + president.photo)
     return president_service.create_president(president)
 
 @router.get(
@@ -72,7 +73,7 @@ def get_president(president_id: int = Path(
 def update_president(president_id: int = Path(
         ...,
         gt=0
-    ), president: president_schema.PresidentBase = Body(...)
+    ), president: president_schema.PresidentPicture = Body(...)
 ):
     return president_service.update_president(president_id, president)
 

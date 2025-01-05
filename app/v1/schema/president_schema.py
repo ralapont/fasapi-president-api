@@ -39,7 +39,17 @@ class PresidentBase(BaseModel):
         example="2032-04-23"
     )
 
-class President(PresidentBase):
+class PresidentPicture(PresidentBase):
+    icon: Optional[str] = Field(
+        ...,
+        example="georgewashington"
+    )
+    photo: Optional[str] = Field(
+        ...,
+        example="gw1"
+    )
+
+class President(PresidentPicture):
     id: int = Field(
         ...,
         example=1
