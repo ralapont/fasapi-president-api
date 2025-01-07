@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "4822cfa7-39aa-4399-b107-2df05eab820c",
+		"name": "president",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2986929",
+		"_collection_link": "https://winter-spaceship-807466.postman.co/workspace/server-express~4743ee50-b6a0-4c85-939b-585799ca1a7e/collection/2986929-4822cfa7-39aa-4399-b107-2df05eab820c?action=share&source=collection_link&creator=2986929"
+	},
+	"item": [
+		{
+			"name": "prueba",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create president",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"last_name\": \"Rafael\",\r\n    \"first_name\": \"Alapont\",\r\n    \"suffix\": \"Mr.\",\r\n    \"city\": \"Madrid\",\r\n    \"state\": \"MA\",\r\n    \"birth\": \"1963-07-19\",\r\n    \"death\": \"2032-04-23\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/president",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"president"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get presidentes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/president/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"president",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://127.0.0.1:8000/api/v1/president/' \\\r\n  -H 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "get president",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/president/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"president",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://127.0.0.1:8000/api/v1/president/1' \\\r\n  -H 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "update president",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"last_name\": \"kktua\",\r\n  \"first_name\": \"kkatua\",\r\n  \"suffix\": \"Mr.\",\r\n  \"city\": \"Los Angeles\",\r\n  \"state\": \"CA\",\r\n  \"birth\": \"2032-04-23\",\r\n  \"death\": \"2032-04-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/president/44",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"president",
+						"44"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'http://127.0.0.1:8000/api/v1/president/44' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"last_name\": \"kktua\",\r\n  \"first_name\": \"kkatua\",\r\n  \"suffix\": \"Mr.\",\r\n  \"city\": \"Los Angeles\",\r\n  \"state\": \"CA\",\r\n  \"birth\": \"2032-04-23\",\r\n  \"death\": \"2032-04-23\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "delete presidenet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/president/44",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"president",
+						"44"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:8000/api/v1/president/44' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		}
+	]
+}
